@@ -1,21 +1,22 @@
 <template>
     <div>
         <div class="w-full h-16 flex justify-between items-center">
-            <div class="ml-4 text-white text-lg font-bold"><a href="#" class="text-white">
+            <div class="ml-4 text-white text-lg font-bold">
+                <RouterLink :to="{ name: 'home' }" class="text-white">
                     <TypedLine text="Giovanni Innamorato" :start_trigger="lines_done[2]"
                         @done_typing="lines_done[3] = true" />
-                </a></div>
+                </RouterLink>
+            </div>
             <div class="mr-4 flex">
-
-                <a href="#" class="text-white ml-4">
+                <RouterLink :to="{ name: 'about' }" class="text-white ml-4">
                     <TypedLine text="Über mich" :start_trigger="true" @done_typing="lines_done[0] = true" />
-                </a>
-                <a href="#" class="text-white ml-4">
+                </RouterLink>
+                <RouterLink :to="{ name: 'projects' }" class="text-white ml-4">
                     <TypedLine text="Projekte" :start_trigger="lines_done[0]" @done_typing="lines_done[1] = true" />
-                </a>
-                <a href="#" class="text-white ml-4">
+                </RouterLink>
+                <RouterLink :to="{ name: 'contact' }" class="text-white ml-4">
                     <TypedLine text="Kontakt" :start_trigger="lines_done[1]" @done_typing="lines_done[2] = true" />
-                </a>
+                </RouterLink>
             </div>
         </div>
     </div>

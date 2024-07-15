@@ -14,10 +14,10 @@
 </template>
 
 <script>
-import Background from "./P5jsBackground.vue"
-import TypedLine from "./TypedLine.vue"
+import Background from "../components/P5jsBackground.vue"
+import TypedLine from "../components/TypedLine.vue"
 export default {
-    name: 'Home',
+    name: 'HomeView',
     components: {
         Background,
         TypedLine
