@@ -20,8 +20,8 @@ export default {
     },
     data() {
         return {
-            min_typing_delay: 55,
-            max_typing_delay: 85,
+            min_typing_delay: 35,
+            max_typing_delay: 45,
             text_shown: "",
 
             blinking_duration: 400,

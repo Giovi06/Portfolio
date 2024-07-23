@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import Background from "../components/P5jsBackground.vue"
+import Background from "../components/StaticFlowFieldBackground.vue"
 import TypedLine from "../components/TypedLine.vue"
 export default {
     name: 'HomeView',

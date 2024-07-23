@@ -1,3 +1,9 @@
+<template>
+    <div>
+        <P5 :sketch="sketch" />
+    </div>
+</template>
+
 <script setup>
 import p5 from "p5"
 
@@ -73,10 +79,5 @@ const sketch = (p5) => {
 }
 </script>
 
-<template>
-    <div>
-        <P5 :sketch="sketch" />
-    </div>
-</template>
 
 <style scoped></style>
