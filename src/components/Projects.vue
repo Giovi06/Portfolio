@@ -7,7 +7,7 @@
                 <div class="grid grid-cols-2 gap-6 justify-center py-10">
                     <RouterLink v-for="(card, index) in cards" :key="index"
                         :to="{ name: 'projectDetail', params: { id: index } }">
-                        <CardComponent :category="card.category" :readTime="card.readTime"
+                        <CardComponent :title="card.title" :category="card.category" :readTime="card.readTime"
                             :description="card.description" :tags="card.tags" :image="card.image"
                             class="hover:shadow-lg transition-shadow duration-300" />
                     </RouterLink>
@@ -21,6 +21,12 @@
 import MovingFlowFieldBackground from './MovingFlowFieldBackground.vue';
 import CardComponent from '../components/Card.vue';
 import { RouterLink } from 'vue-router';
+let VueJS = "../../public/VueJS.svg";
+let ReactJS = "../../public/ReactJS.svg";
+let Vite = "../../public/Vite.svg";
+let MSSQL = "../../public/MSSQL.svg";
+let DotNet = "../../public/DotNet.svg";
+let SCRUM = "https://cdn.worldvectorlogo.com/logos/scrumorg-1.svg"
 
 export default {
     name: 'MainComponent',
@@ -32,12 +38,16 @@ export default {
         return {
             cards: [
                 {
-                    category: 'Article',
+                    title: 'ERP Prototyp',
+                    category: 'Web-App ',
                     readTime: 12,
-                    description: '',
+                    description: 'Ein ERP Prototyp für ein Kleinunternehmen, welcher die Verwaltung von Produkten und Bestellungen ermöglicht.',
                     tags: [
-                        { text: 'Environment', bgColor: 'bg-blue-100', textColor: 'text-blue-600' },
-                        { text: 'Climate', bgColor: 'bg-teal-100', textColor: 'text-teal-600' },
+                        { svg: "Scrum" },
+                        { svg: "DotNet" },
+                        { svg: "ReactJS" },
+                        { svg: "MSSQL" },
+                        { svg: "Vite" },
                     ],
                     image: '/src/assets/ProfilBild-Mahara.jpeg',
                 },
