@@ -6,8 +6,6 @@ import ContactView from "../views/ContactView.vue";
 import NotFound from "../views/NotFound.vue";
 import ProjectDetail from "../views/ProjectDetailView.vue";
 
-import SVG from "../components/SVG.vue";
-
 const routes = [
   {
     path: "/",
@@ -31,11 +29,6 @@ const routes = [
     props: (route) => ({
       id: parseInt(route.params.id), // Pass `id` as a prop to ProjectDetail
     }),
-  },
-  {
-    path: "/svg",
-    name: "svg",
-    component: SVG,
   },
   {
     path: "/contact",
