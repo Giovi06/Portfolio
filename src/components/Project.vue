@@ -1,7 +1,7 @@
 <template>
     <div class="w-full h-full">
         <div :class="[
-            'min-w-36 max-w-44 h-full mt-16 mr-2 fixed bg-gray-950 transition-all duration-500 transform',
+            'min-w-36 max-w-44 h-full mr-2 fixed bg-gray-950 transition-all duration-500 transform',
             navVisible ? 'translate-x-0' : '-translate-x-full',
             'md:translate-x-0'  // Ensure it stays visible on larger screens
         ]">

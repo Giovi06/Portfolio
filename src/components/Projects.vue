@@ -49,68 +49,9 @@ export default {
                         { svg: "MSSQL" },
                         { svg: "Vite" },
                     ],
-                    image: '/src/assets/ProfilBild-Mahara.jpeg',
+                    image: '/src/assets/Babacus.png',
                 },
-                {
-                    category: 'Article',
-                    readTime: 9,
-                    description: 'New sustainable energy alternatives and how we can utilize them efficiently.',
-                    tags: [
-                        { text: 'Environment', bgColor: 'bg-blue-100', textColor: 'text-blue-600' },
-                        { text: 'Energy', bgColor: 'bg-green-100', textColor: 'text-green-600' },
-                    ],
-                    image: '',
-                },
-                {
-                    category: 'Article',
-                    readTime: 5,
-                    description: 'Upcoming technology is what we\'ve been waiting for to shape our future.',
-                    tags: [
-                        { text: 'Tech', bgColor: 'bg-purple-100', textColor: 'text-purple-600' },
-                        { text: 'Opinion', bgColor: 'bg-indigo-100', textColor: 'text-indigo-600' },
-                    ],
-                    image: '',
-                },
-                {
-                    category: 'Article',
-                    readTime: 5,
-                    description: 'Upcoming technology is what we\'ve been waiting for to shape our future.',
-                    tags: [
-                        { text: 'Tech', bgColor: 'bg-purple-100', textColor: 'text-purple-600' },
-                        { text: 'Opinion', bgColor: 'bg-indigo-100', textColor: 'text-indigo-600' },
-                    ],
-                    image: '',
-                },
-                {
-                    category: 'Article',
-                    readTime: 5,
-                    description: 'Upcoming technology is what we\'ve been waiting for to shape our future.',
-                    tags: [
-                        { text: 'Tech', bgColor: 'bg-purple-100', textColor: 'text-purple-600' },
-                        { text: 'Opinion', bgColor: 'bg-indigo-100', textColor: 'text-indigo-600' },
-                    ],
-                    image: '',
-                },
-                {
-                    category: 'Article',
-                    readTime: 5,
-                    description: 'Upcoming technology is what we\'ve been waiting for to shape our future.',
-                    tags: [
-                        { text: 'Tech', bgColor: 'bg-purple-100', textColor: 'text-purple-600' },
-                        { text: 'Opinion', bgColor: 'bg-indigo-100', textColor: 'text-indigo-600' },
-                    ],
-                    image: '',
-                },
-                {
-                    category: 'Article',
-                    readTime: 5,
-                    description: 'Upcoming technology is what we\'ve been waiting for to shape our future.',
-                    tags: [
-                        { text: 'Tech', bgColor: 'bg-purple-100', textColor: 'text-purple-600' },
-                        { text: 'Opinion', bgColor: 'bg-indigo-100', textColor: 'text-indigo-600' },
-                    ],
-                    image: '',
-                },
+
                 // Add more card data as needed
             ],
         };

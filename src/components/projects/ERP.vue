@@ -1,186 +1,194 @@
 <template>
-    <div class="container mx-auto p-4 h-auto mt-12">
-
-        <div class="surface-section px-4 py-8 md:px-6 lg:px-8">
-            <div class="w-full lg:hidden">
-                <div class="text-900 text-3xl font-medium">Feature Title</div>
-                <p class="text-600 text-xl line-height-3 mb-6">Vulputate eu scelerisque felis imperdiet proin. Eget arcu
-                    dictum varius duis at consectetur lorem donec.</p>
-            </div>
-            <div class="grid justify-content-center flex-column lg:flex-row">
-                <div class="col-12 lg:col-6 py-4 lg:pr-4 flex-order-2 lg:flex-order-1">
-                    <div class="w-full hidden lg:block">
-                        <div class="text-900 text-3xl font-medium">Feature Title</div>
-                        <p class="text-600 text-xl line-height-3 mb-6">Vulputate eu scelerisque felis imperdiet proin.
-                            Eget arcu dictum varius duis at consectetur lorem donec.</p>
-                    </div>
-                    <div class="flex px-5 py-2">
-                        <i class="pi pi-wallet text-4xl font-bold text-900"></i>
-                        <div class="ml-5">
-                            <div class="text-900 font-medium text-2xl">Eu non diam phasellus</div>
-                            <p class="text-700">Vulputate eu scelerisque felis imperdiet proin. Eget arcu dictum varius
-                                duis at consectetur lorem donec.</p>
-                        </div>
-                    </div>
-                    <div class="flex px-5 py-2">
-                        <i class="pi pi-video text-4xl font-bold text-900"></i>
-                        <div class="ml-5">
-                            <div class="text-900 font-medium text-2xl">Imperdiet proin fermentum</div>
-                            <p class="text-700">Consectetur lorem donec massa sapien faucibus et molestie.</p>
-                        </div>
-                    </div>
-                    <div class="flex px-5 py-2">
-                        <i class="pi pi-tags text-4xl font-bold text-900"></i>
-                        <div class="ml-5">
-                            <div class="text-900 font-medium text-2xl">Est ullamcorper eget</div>
-                            <p class="text-700">Eget arcu dictum varius duis at consectetur lorem donec. Semper viverra
-                                nam libero justo laoreet sit amet cursus sit. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 lg:col-6 flex-order-1 lg:flex-order-2">
-                    <img src="" class="border-round w-full" alt="product" />
-                </div>
-            </div>
+    <div class="w-full h-full">
+        <!-- Navigation Sidebar -->
+        <div :class="[
+            'min-w-40 max-w-44 h-full mr-2 fixed bg-gray-950 transition-all duration-500 transform',
+            navVisible ? 'translate-x-0' : '-translate-x-full',
+            'md:translate-x-0'  // Ensure it stays visible on larger screens
+        ]">
+            <nav class="mt-6">
+                <ul class="list-none flex flex-col justify-start items-center">
+                    <li v-for="section in sections" :key="section.id" class="my-2">
+                        <a :href="`#${section.id}`"
+                            :class="isActive(section.id) ? ' text-green-700   font-bold text-md' : 'text-white'"
+                            class="transition-colors duration-300">
+                            {{ section.name }}
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
-        <section class="mb-8">
-            <h1 class="text-4xl font-bold text-center mb-4">Aufgabenstellung</h1>
-            <p class="text-lg text-justify">
-                Verlangt wurde, dass wir unsere Kenntnisse aus den Modulen 114, 210 und 426 vertiefen.
-            </p>
-            <p class="text-lg text-justify">
-                Wir haben uns entschieden, die Theorie aus dem Modul 426 "Software mit agilen Methoden entwickeln"
-                anzuwenden.
-            </p>
-            <p class="text-lg text-justify">
-                Somit haben sich Giuliano Martullo, Mirhan Özden, Lukas Heiniger und ich in einem Team
-                zusammengeschlossen und Babacus als Projekt bestimmt.
-            </p>
-            <p class="text-lg text-justify">
-                Unser Team teilte sich in zwei Gruppen auf, um die Effizienz zu steigern:
-            </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                <div>
-                    <h2 class="text-2xl font-semibold">Frontend:</h2>
-                    <ul class="list-disc pl-5">
-                        <li>Mirhan Özden</li>
-                        <li>Lukas Heiniger</li>
-                    </ul>
-                </div>
-                <div>
-                    <h2 class="text-2xl font-semibold">Backend:</h2>
-                    <ul class="list-disc pl-5">
-                        <li>Giuliano Martullo</li>
-                        <li>Giovanni Innamorato (ich)</li>
-                    </ul>
-                </div>
-            </div>
-            <p class="text-lg text-justify">
-                Die Scrum-Rollen haben wir wie folgt zugeteilt:
-            </p>
-            <ul class="list-disc pl-5">
-                <li><strong>Product Owner:</strong> Mirhan</li>
-                <li><strong>Scrum Master:</strong> Giovanni</li>
-                <li><strong>Entwicklungsteam:</strong> Giovanni, Giuliano, Lukas, Mirhan</li>
-            </ul>
-        </section>
 
-        <section class="mb-8">
-            <h1 class="text-4xl font-bold text-center mb-4">Ziele</h1>
-            <p class="text-lg text-justify">
-                Für das Projekt waren meine persönlichen Ziele:
-            </p>
-            <ul class="list-disc pl-5">
-                <li>SCRUM kennenlernen in der Praxis</li>
-                <li>Zusammenarbeit und Aufgabenteilung zu fördern</li>
-            </ul>
-        </section>
 
-        <section class="mb-8">
-            <h1 class="text-4xl font-bold text-center mb-4">Babacus</h1>
-            <p class="text-lg text-justify">
-                Ein ERP (Enterprise Resource Planning) ist eine Software für Unternehmen, die für die Buchhaltung und
-                viele andere Aufgaben gedacht ist.
-            </p>
-            <p class="text-lg text-justify">
-                Wir haben uns entschieden, uns nur auf die Eintragung von verkauften und eingekauften Produkten zu
-                konzentrieren, um den Rahmen möglichst klein zu halten. Denn ein ERP zu entwickeln kann sehr schnell
-                sehr kompliziert und aufwendig werden.
-            </p>
-            <p class="text-lg text-justify">
-                Als imaginären Kunden haben wir einen Kiosk bestimmt. Dieser möchte eine Software, in der er seine
-                Verkäufe eintragen kann, inklusive Preis, Menge und Art der Bezahlung.
-            </p>
-            <p class="text-lg text-justify">
-                Die User-Stories und das gesamte Projekt findet Ihr auf GitHub <a
-                    href="https://github.com/dein-repository-link" class="text-blue-600 underline">hier</a>.
-            </p>
-            <p class="text-lg text-justify">
-                Für die Entwicklung von Babacus haben sich folgende Technologien als optimal gezeigt:
-            </p>
-            <ul class="list-disc pl-5">
-                <li>Postman: Perfekt für die API-Calls und zum Testen der API.</li>
-                <li>Vite: Ein Tool zum schnellen Aufbau von Frontend-Projekten.</li>
-                <li>React JS: Ein Framework für das Frontend.</li>
-                <li>C#: Die verwendete Sprache für die API.</li>
-                <li>MSSQL: Die Datenbank für die App.</li>
-                <li>GitHub: Optimal für die Nutzung von Git und den Austausch von Code.</li>
-            </ul>
-        </section>
+        <!-- Main Content Area -->
+        <div class="md:ml-44 mt-16 w-auto container p-8 space-y-20">
+            <!-- Sections -->
+            <section v-for="section in sections" :id="section.id" :key="section.id" class="fadeInUp h-auto">
+                <h2 class="text-xl sm:text-xl md:text-5xl font-semibold text-center text-gray-800 ">{{ section.name
+                    }}</h2>
+                <div v-html="section.content" class="text-md text-gray-700  dark:text-gray-400 space-y-4 mt-4"></div>
 
-        <section class="mb-8">
-            <h1 class="text-4xl font-bold text-center mb-4">Reflexion</h1>
-            <p class="text-lg text-justify">
-                Wir haben anfangs zusammen den groben Ablauf des Projekts besprochen. Wir konnten die Aufgaben gut
-                untereinander aufteilen. Am Anfang des Projekts waren wir alle noch nicht sehr vertraut mit der Nutzung
-                von Git und GitHub im Team. Im Nachhinein habe ich jedoch ein sehr gutes Gefühl, dass wir alle viel
-                dazugelernt haben. Das sieht man auch in der Commit-History: Mit der Zeit wurde es weniger chaotisch,
-                und die Einhaltung der Grundkonzepte von Git wurde beachtet.
-            </p>
-            <p class="text-lg text-justify">
-                Anfangs habe ich dem Team Postman genauer vorgestellt und beschlossen, dass meine Gruppe (Backend) eine
-                API-Call-Library in Postman erstellen würde, die die von uns implementierten Aufrufe enthalten sollte.
-                Die Idee war, dass wir im Backend unsere Funktionen anhand dieser Aufrufe funktionsfähig machen und das
-                Frontend anhand dieser API-Aufrufe die Webapp gestalten könnte. Der Aufwand am Anfang war groß, da wir
-                von Anfang an eine Architektur der App entwerfen mussten, ohne zu wissen, ob das überhaupt so
-                implementiert werden kann. Schlussendlich war die Mühe doch nicht umsonst, denn beide Gruppen konnten so
-                unabhängig voneinander arbeiten und davon ausgehen, dass ihre Implementierung funktionieren würde. Es
-                konnte als Interface betrachtet werden.
-            </p>
-            <p class="text-lg text-justify">
-                Doch im Verlauf des Projekts wurde uns ein großer Fehler bei dieser Herangehensweise bewusst. Wir haben
-                es am Anfang zu weit und komplex implementiert. Das hatte zur Folge, dass wir lange brauchten, um diese
-                Aufrufe senden und empfangen zu können, und wir konnten in der Zwischenzeit die App nicht auf
-                Kompatibilität und Funktion testen. Wir haben herausgefunden, dass es besser gewesen wäre, die API-Calls
-                nur schrittweise festzulegen: also anfangs einfach zu halten, dann auf Funktionsfähigkeit zu prüfen und
-                danach die API-Calls zu erweitern.
-            </p>
-            <p class="text-lg text-justify">
-                Ansonsten lief die Implementierung ziemlich reibungslos.
-            </p>
-        </section>
-
-        <section class="mb-8">
-            <h1 class="text-4xl font-bold text-center mb-4">Verifizierung</h1>
-            <p class="text-lg text-justify">
-                Auf GitHub kann man die verschiedenen Sprints sehen. Leider haben wir uns nicht immer an die täglichen
-                Scrum-Meetings gehalten und diese wurden öfter vernachlässigt. Nichtsdestotrotz konnten wir erfolgreich
-                einen ersten Sprint durchführen und haben am Ende des Sprints ein Produkt, das dem Product Owner gezeigt
-                werden kann. Somit kann ich bestätigen, dass wir Scrum gut in der Praxis kennenlernen durften und
-                wichtige Lektionen gelernt haben.
-            </p>
-            <p class="text-lg text-justify">
-                Das ist uns gut gelungen. Wie beschrieben, haben wir uns in zwei Gruppen aufgeteilt und die User-Stories
-                untereinander aufgeteilt.
-            </p>
-        </section>
+            </section>
+        </div>
     </div>
 </template>
 
 <script>
 export default {
-    name: 'PortfolioBeitrag',
+    data() {
+        return {
+            sections: [
+                { id: 'babacus', name: 'Babacus', content: this.getHeroSection() },
+                { id: 'aufgabenstellung', name: 'Aufgabenstellung', content: this.getAufgabenstellungSection() },
+                { id: 'ziele', name: 'Ziele', content: this.getZieleSection() },
+                { id: 'project', name: 'Produkt', content: this.getBabacusSection() },
+                { id: 'reflexion', name: 'Reflexion', content: this.getReflexionSection() },
+                { id: 'verifizierung', name: 'Verifizierung', content: this.getVerifizierungSection() },
+            ],
+            activeSection: '',
+            navVisible: true,
+        };
+    },
+    methods: {
+        isActive(sectionId) {
+            return this.activeSection === sectionId;
+        },
+        onScroll() {
+            const scrollPosition = window.scrollY + window.innerHeight / 2;
+
+            this.sections.forEach((section) => {
+                const element = document.getElementById(section.id);
+                if (element.offsetTop <= scrollPosition && element.offsetTop + element.offsetHeight > scrollPosition) {
+                    this.activeSection = section.id;
+                }
+            });
+        },
+        handleResize() {
+            this.navVisible = window.innerWidth >= 768;
+        },
+        getHeroSection() {
+            return `
+    <div class="relative">
+      <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 items-center gap-12">
+        <div class="space-y-6 sm:order-2">
+          <p class="text-2xl text-gray-600 dark:text-gray-400">
+            Ein ERP für Unternehmen, entwickelt für die Buchhaltung und viele andere Aufgaben.
+          </p>
+          <div class="space-y-4">
+            <a href="https://github.com/Giovi06/Babacus" class="flex items-center space-x-4 p-4 hover:bg-gray-950 hover:bg-opacity-15 rounded z-20">
+              <i class="pi pi-github text-4xl"></i>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">GitHub</h3>
+                <p class="text-gray-600 dark:text-gray-400">Das gesamte Projekt im Repository.</p>
+              </div>
+            </a>
+            <a href="javascript:void(0);" class="flex items-center space-x-4 p-4 hover:bg-gray-950 hover:bg-opacity-15 rounded z-20" onclick="document.getElementById('verifizierung').scrollIntoView({ behavior: 'smooth' });">
+              <i class="pi pi-video text-4xl text-blue-600"></i>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Projekt Video</h3>
+                <p class="text-gray-600 dark:text-gray-400">Ein Überblick über unser Projekt.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="sm:order-1">
+          <img src="/src/assets/Babacus.png" class="border-round shadow-lg w-full max-w-2xl z-10" alt="Babacus ERP" />
+        </div>
+      </div>
+      <div class="w-screen absolute inset-0 bg-gradient-to-r from-transparent to-blue-50 dark:to-gray-800 opacity-50 z-0"></div>
+    </div>
+  `;
+        },
+
+
+        getAufgabenstellungSection() {
+            return `
+          <div>
+            <p>Verlangt wurde, dass wir unsere Kenntnisse aus den Modulen 114, 210 und 426 vertiefen.</p>
+            <p>Wir haben uns entschieden, die Theorie aus dem Modul 426 "Software mit agilen Methoden entwickeln" anzuwenden.</p>
+            <p>Somit haben sich Giuliano Martullo, Mirhan Özden, Lukas Heiniger und ich in einem Team zusammengeschlossen und Babacus als Projekt bestimmt.</p>
+            <p>Unser Team teilte sich in zwei Gruppen auf, um die Effizienz zu steigern:</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div class="p-4 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Frontend</h3>
+                <ul class="list-disc pl-6 text-gray-700 dark:text-gray-400">
+                  <li>Mirhan Özden</li>
+                  <li>Lukas Heiniger</li>
+                </ul>
+              </div>
+              <div class="p-4 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-gray-800 dark:text-gray-200">Backend</h3>
+                <ul class="list-disc pl-6 text-gray-700 dark:text-gray-400">
+                  <li>Giuliano Martullo</li>
+                  <li>Giovanni Innamorato (ich)</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        `;
+        },
+        getZieleSection() {
+            return `
+          <div>
+            <p>Für das Projekt waren meine persönlichen Ziele:</p>
+            <ul class="list-disc pl-6">
+              <li>SCRUM kennenlernen in der Praxis</li>
+              <li>Zusammenarbeit und Aufgabenteilung zu fördern</li>
+            </ul>
+          </div>
+        `;
+        },
+        getBabacusSection() {
+            return `
+          <div>
+            <p>Ein ERP (Enterprise Resource Planning) ist eine Software für Unternehmen, die für die Buchhaltung und viele andere Aufgaben gedacht ist.</p>
+            <p>Wir haben uns entschieden, uns nur auf die Eintragung von verkauften und eingekauften Produkten zu konzentrieren, um den Rahmen möglichst klein zu halten.</p>
+            <p>Als imaginären Kunden haben wir einen Kiosk bestimmt. Dieser möchte eine Software, in der er seine Verkäufe eintragen kann, inklusive Preis, Menge und Art der Bezahlung.</p>
+            <p>Die User-Stories und das gesamte Projekt findet Ihr auf GitHub <a href="https://github.com/dein-repository-link" class="text-blue-600 dark:text-blue-400 underline">hier</a>.</p>
+            <p>Für die Entwicklung von Babacus haben sich folgende Technologien als optimal gezeigt:</p>
+            <ul class="list-disc pl-2 sm:pl-4 md:pl-6 pt-4">
+              <li class="py-2">Postman: Perfekt für die API-Calls und zum Testen der API.</li>
+              <li class="py-2">Vite: Ein Tool zum schnellen Aufbau von Frontend-Projekten.</li>
+              <li class="py-2">React JS: Ein Framework für das Frontend.</li>
+              <li class="py-2">C#: Die verwendete Sprache für die API.</li>
+              <li class="py-2">MSSQL: Die Datenbank für die App.</li>
+              <li class="py-2">GitHub: Optimal für die Nutzung von Git und den Austausch von Code.</li>
+            </ul>
+          </div>
+        `;
+        },
+        getReflexionSection() {
+            return `
+          <div>
+            <p>Wir haben anfangs zusammen den groben Ablauf des Projekts besprochen und die Aufgaben gut untereinander aufgeteilt.</p>
+            <p>Anfangs habe ich dem Team Postman vorgestellt und beschlossen, dass meine Gruppe eine API-Call-Library in Postman erstellen würde.</p>
+            <p>Im Verlauf des Projekts wurde uns ein Fehler bei dieser Herangehensweise bewusst, den wir zukünftig vermeiden wollen.</p>
+            <p>Ansonsten lief die Implementierung ziemlich reibungslos.</p>
+          </div>
+        `;
+        },
+        getVerifizierungSection() {
+            return `
+                <div>
+                    <p>Auf GitHub kann man die verschiedenen Sprints sehen. Trotz einiger Herausforderungen haben wir erfolgreich einen ersten Sprint durchgeführt.</p>
+                    <p>Das ist uns gut gelungen, und wir konnten Scrum in der Praxis kennenlernen und wertvolle Lektionen lernen.</p>
+                    </div>
+                    <div class="relative pt-[56.25%] overflow-hidden">
+                    <iframe class=" absolute top-0 left-0 w-full h-full" src="https://www.youtube.com/embed/xvZuYSPd4uY?si=nKRY9fOAT7jUxtEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                `;
+        },
+
+
+    },
+    mounted() {
+        window.addEventListener('scroll', this.onScroll);
+        window.addEventListener('resize', this.handleResize);
+        this.handleResize(); // Check initial screen size
+    },
+    beforeUnmount() {
+        window.removeEventListener('scroll', this.onScroll);
+        window.removeEventListener('resize', this.handleResize);
+    }
 };
 </script>
-
-<style scoped></style>
