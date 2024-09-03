@@ -7,11 +7,15 @@
 
 <script>
 import ERP from "../components/projects/ERP.vue";
+import NodeJS from "../components/projects/NodeJS.vue";
+import FightRadar from "../components/projects/FightRadar.vue";
 
 export default {
     name: 'ProjectDetailView',
     components: {
         ERP,
+        NodeJS,
+        FightRadar,
     },
     props: {
         id: {
@@ -34,16 +38,16 @@ export default {
                 component: ERP, // Directly reference the imported component
             },
             {
-                title: 'ERP',
+                title: 'FightRadar',
                 description: 'Enterprise Resource Planning',
                 image: '',
-                component: ERP, // Directly reference the imported component
+                component: FightRadar, // Directly reference the imported component
             },
             {
-                title: 'ERP',
+                title: 'NodeJS API',
                 description: 'Enterprise Resource Planning',
                 image: '',
-                component: ERP, // Directly reference the imported component
+                component: NodeJS, // Directly reference the imported component
             },
             // Add other project objects as needed
         ];

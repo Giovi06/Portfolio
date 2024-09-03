@@ -24,7 +24,7 @@ export default {
                     const width = p5.width;
                     const height = p5.height;
 
-                    let density = p5.random(25, 70);
+                    let density = p5.random(25, 70);;
                     let space = width / density;
 
                     points = [];

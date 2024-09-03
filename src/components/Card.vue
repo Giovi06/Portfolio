@@ -11,11 +11,11 @@
         </div>
         <p class="line-height-3 mt-3 mb-7 text-gray-900 font-medium text-lg ">{{ description }}</p>
         <div class="mb-5 flex justify-center items-center">
-            <span v-for="tag in tags" :key="tag.svg" :class="`w-2 mx-3`">
+            <span v-for="tag in tags" :key="tag.svg" :class="`w-2 mx-3 text-white`">
                 <SvgLoader :name="tag.svg" class="w-full h-auto inline-block" />
             </span>
         </div>
-        <img :src="image" alt="Image" class="block w-full mt-auto rounded-lg" />
+        <!-- <img :src="image" alt="Image" class="block w-full mt-auto rounded-lg" /> -->
     </div>
 
 </template>

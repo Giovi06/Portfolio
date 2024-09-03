@@ -1,5 +1,5 @@
 <template>
-    <div class="w-full h-screen relative bg-gray-900">
+    <div class="w-full h-screen relative bg-gray-900 overflow-hidden">
         <Background class="z-0 absolute w-full h-screen top-0 left-0" />
         <div class="relative flex flex-col justify-center items-center z-1 w-full h-screen text-center text-white">
             <TypedLine class="z-1 relative text-6xl md:text-9xl font-bold mb-4" text="Willkommen" :start_trigger="true"
