@@ -56,13 +56,13 @@ export default {
   },
   methods: {
     isActive(sectionId) {
-      console.log('active section:', this.activeSection);
+
       // Check if the current section is the active section
       return this.activeSection === sectionId;
     },
     onScroll() {
 
-      console.log('scrolling');
+
       // Get the scroll position, adjust it to the center of the viewport
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       // Loop through sections to find the currently visible section
@@ -77,7 +77,7 @@ export default {
           // If the element is in view, set it as the active section
           if (elementTop <= scrollPosition && elementBottom > scrollPosition) {
             this.activeSection = section.id;
-            console.log('active section:', this.activeSection);
+
           }
         }
       });

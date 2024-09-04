@@ -45,6 +45,7 @@ export default {
   data() {
     return {
       sections: [
+        { id: '0', name: 'NodeJS API', content: this.getHeroSection() },
         { id: 'aufgabenstellung', name: 'Aufgabenstellung', content: this.getAufgabenstellungContent() },
         { id: 'ziele', name: 'Ziele', content: this.getZieleContent() },
         { id: 'produkt', name: 'Produkt', content: this.getProduktContent() },
@@ -57,13 +58,11 @@ export default {
   },
   methods: {
     isActive(sectionId) {
-      console.log('active section:', this.activeSection);
       // Check if the current section is the active section
       return this.activeSection === sectionId;
     },
     onScroll() {
 
-      console.log('scrolling');
       // Get the scroll position, adjust it to the center of the viewport
       const scrollPosition = window.scrollY + window.innerHeight / 2;
       // Loop through sections to find the currently visible section
@@ -78,7 +77,6 @@ export default {
           // If the element is in view, set it as the active section
           if (elementTop <= scrollPosition && elementBottom > scrollPosition) {
             this.activeSection = section.id;
-            console.log('active section:', this.activeSection);
           }
         }
       });
@@ -93,6 +91,29 @@ export default {
         sectionElement.scrollIntoView({ behavior: 'smooth' });
       }
     },
+    getHeroSection() {
+      return `
+    <div class="relative">
+      <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 items-center gap-12">
+        <div class="space-y-6 sm:order-2">
+          <p class="text-2xl text-gray-600 dark:text-gray-400">
+            Ein ERP für Unternehmen, entwickelt für die Buchhaltung und viele andere Aufgaben.
+          </p>
+          <div class="space-y-4">
+            <a href="https://github.com/Giovi06/1305_NodeJs_API" class="flex items-center space-x-4 p-4 hover:bg-gray-950 hover:bg-opacity-15 rounded z-20">
+              <i class="pi pi-github text-4xl"></i>
+              <div class="flex-1">
+                <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">GitHub</h3>
+                <p class="text-gray-600 dark:text-gray-400">Das gesamte Projekt im Repository.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="w-screen absolute inset-0 bg-gradient-to-r from-transparent to-blue-50 dark:to-gray-800 opacity-50 z-0"></div>
+    </div>
+  `;
+    },
     getAufgabenstellungContent() {
       return `
         <p><strong>Ausgangslage</strong></p>
@@ -102,7 +123,6 @@ export default {
           <li>165 NoSQL-Datenbanken einsetzen</li>
           <li>254 Geschäftsprozesse im eigenen Berufsumfeld beschreiben</li>
         </ul>
-        <p>Suchen Sie sich ein Projekt aus, das zu Ihrem Modulablaufplan passt oder wählen Sie ein eigenes Projekt zur Repetition des Stoffes oder zum Kennenlernen von neuen Technologien aus.</p>
       `;
     },
     getZieleContent() {
@@ -154,7 +174,8 @@ export default {
         <p><strong>Authentifizierung</strong></p>
         <p>Ich habe gelernt, wie man JSON Web Tokens (JWT) zur Authentifizierung verwendet und wie man Token-Validierung implementiert, um geschützte Routen abzusichern. Durch Tutorials und Dokumentationen habe ich verstanden, wie man sichere Registrierungs- und Login-Verfahren erstellt, sowie wie man Cookies und Access Tokens handhabt. Die praktische Umsetzung dieser Sicherheitsmechanismen hat mein Verständnis für serverseitige Authentifizierung stark erweitert. Auch dieses Ziel habe ich erfolgreich erreicht.</p>
       `;
-    }
+    },
+
   },
   mounted() {
     window.addEventListener('resize', this.handleResize);
