@@ -29,7 +29,7 @@
         <div class="p-24 bg-gray-950 bg-opacity-60">
           <h2 class="text-xl sm:text-xl md:text-5xl font-semibold text-center text-gray-800 my-6">{{
             section.name
-            }}</h2>
+          }}</h2>
           <div v-html="section.content" class="text-md text-gray-700  dark:text-gray-400 space-y-4 mt-8">
           </div>
         </div>
@@ -110,7 +110,6 @@ export default {
           </div>
         </div>
       </div>
-      <div class="w-screen absolute inset-0 bg-gradient-to-r from-transparent to-blue-50 dark:to-gray-800 opacity-50 z-0"></div>
     </div>
   `;
     },

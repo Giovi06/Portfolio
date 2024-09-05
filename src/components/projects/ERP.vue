@@ -118,7 +118,6 @@ export default {
           </div>
         </div>
       </div>
-      <div class="w-screen absolute inset-0 bg-gradient-to-r from-transparent to-blue-50 dark:to-gray-800 opacity-50 z-0"></div>
     </div>
   `;
     },

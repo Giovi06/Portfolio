@@ -102,7 +102,7 @@ export default {
     <div class="relative">
       <div class="relative z-10 grid grid-cols-1 sm:grid-cols-2 items-center gap-12">
         <div class="space-y-6 sm:order-2">
-          <p class="text-2xl text-gray-600 dark:text-gray-400">
+          <p class="text-2xl text-950 dark:text-gray-400">
             Ein ERP für Unternehmen, entwickelt für die Buchhaltung und viele andere Aufgaben.
           </p>
           <div class="space-y-4">
@@ -114,7 +114,7 @@ export default {
               </div>
             </a>
             <a href="javascript:void(0);" class="flex items-center space-x-4 p-4 hover:bg-gray-950 hover:bg-opacity-15 rounded z-20" onclick="document.getElementById('video').scrollIntoView({ behavior: 'smooth' });">
-              <i class="pi pi-video text-4xl text-blue-600"></i>
+              <i class="pi pi-video text-4xl text-blue-900"></i>
               <div class="flex-1">
                 <h3 class="text-xl font-semibold text-gray-800 dark:text-gray-200">Projekt Video</h3>
                 <p class="text-gray-600 dark:text-gray-400">Ein Überblick über unser Projekt.</p>
@@ -123,7 +123,6 @@ export default {
           </div>
         </div>
       </div>
-      <div class="w-screen absolute inset-0 bg-gradient-to-r from-transparent to-blue-50 dark:to-gray-800 opacity-50 z-0"></div>
     </div>
   `;
     },
@@ -221,18 +220,18 @@ export default {
     },
     getEntscheidenSection() {
       return `
-      <div>
-      <h2 class="text-lg font-semibold mb-4">
+    <div class="w-auto">
+      <h2 class="text-lg sm:text-xl font-semibold mb-4 text-center">
         Vergleich mehrerer Varianten durch Nutzwertanalyse
       </h2>
 
+      <!-- Criteria Section -->
       <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Festlegung der Kriterien</h3>
-        <p class="mb-4">
-          Zuerst müssen wir die relevanten Kriterien definieren, anhand derer
-          wir die beiden Alternativen bewerten wollen:
+        <h3 class="text-md sm:text-lg font-semibold mb-2">Festlegung der Kriterien</h3>
+        <p class="mb-4 text-sm sm:text-base">
+          Zuerst müssen wir die relevanten Kriterien definieren, anhand derer wir die beiden Alternativen bewerten wollen:
         </p>
-        <ul class="list-disc list-inside space-y-2">
+        <ul class="list-disc list-inside space-y-2 text-sm sm:text-base">
           <li>Performance: Wie schnell und effizient ist die Lösung?</li>
           <li>Entwicklungszeit: Wie lange dauert die Implementierung?</li>
           <li>Wartbarkeit: Wie einfach ist es, den Code zu pflegen und zu aktualisieren?</li>
@@ -242,140 +241,93 @@ export default {
         </ul>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Gewichtung der Kriterien</h3>
-        <p class="mb-4">
-          Jedem Kriterium wird eine Gewichtung zugewiesen, die die Wichtigkeit des Kriteriums in Bezug auf das Projekt widerspiegelt. Die Gewichtungen sollten in Summe 10 ergeben.
-        </p>
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr>
-              <th class="border-b p-2">Kriterium</th>
-              <th class="border-b p-2">Gewichtung</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="p-2 border-b">Performance</td>
-              <td class="p-2 border-b">3</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Entwicklungszeit</td>
-              <td class="p-2 border-b">2</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Wartbarkeit</td>
-              <td class="p-2 border-b">2</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Benutzerfreundlichkeit</td>
-              <td class="p-2 border-b">1</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Flexibilität</td>
-              <td class="p-2 border-b">1</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Sicherheit</td>
-              <td class="p-2 border-b">1</td>
-            </tr>
-            <tr>
-              <td class="p-2 font-bold">Summe</td>
-              <td class="p-2 font-bold">10</td>
-            </tr>
-          </tbody>
-        </table>
+      <!-- Weighting Criteria Section inside Surface Card -->
+      <div class="surface-card shadow-2 border-round p-4 mb-6">
+        <div class="flex justify-content-between align-items-center mb-5">
+          <span class="text-xl text-900 font-medium">Gewichtung der Kriterien</span>
+          <div>
+            <Button icon="pi pi-ellipsis-v" class="p-button-text p-button-plain p-button-rounded" @click="$refs.menu2.toggle($event)"></Button>
+            <Menu ref="menu2" :popup="true" :model="items"></Menu>
+          </div>
+        </div>
+        <div class="overflow-x-auto w-full">
+          <table class="min-w-full text-left border-collapse text-sm sm:text-base">
+            <thead>
+              <tr>
+                <th class="border-b p-2">Kriterium</th>
+                <th class="border-b p-2">Gewichtung</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="p-2 border-b">Performance</td><td class="p-2 border-b">3</td></tr>
+              <tr><td class="p-2 border-b">Entwicklungszeit</td><td class="p-2 border-b">2</td></tr>
+              <tr><td class="p-2 border-b">Wartbarkeit</td><td class="p-2 border-b">2</td></tr>
+              <tr><td class="p-2 border-b">Benutzerfreundlichkeit</td><td class="p-2 border-b">1</td></tr>
+              <tr><td class="p-2 border-b">Flexibilität</td><td class="p-2 border-b">1</td></tr>
+              <tr><td class="p-2 border-b">Sicherheit</td><td class="p-2 border-b">1</td></tr>
+              <tr><td class="p-2 font-bold">Summe</td><td class="p-2 font-bold">10</td></tr>
+            </tbody>
+          </table>
+        </div>
       </div>
 
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Bewertung der Alternativen</h3>
-        <table class="w-full text-left border-collapse">
-          <thead>
-            <tr>
-              <th class="border-b p-2">Kriterium</th>
-              <th class="border-b p-2">Gewichtung</th>
-              <th class="border-b p-2">React Bewertung</th>
-              <th class="border-b p-2">React Punkte</th>
-              <th class="border-b p-2">JS/HTML Bewertung</th>
-              <th class="border-b p-2">JS/HTML Punkte</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="p-2 border-b">Performance</td>
-              <td class="p-2 border-b">3</td>
-              <td class="p-2 border-b">8</td>
-              <td class="p-2 border-b">24</td>
-              <td class="p-2 border-b">7</td>
-              <td class="p-2 border-b">21</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Entwicklungszeit</td>
-              <td class="p-2 border-b">2</td>
-              <td class="p-2 border-b">7*</td>
-              <td class="p-2 border-b">14</td>
-              <td class="p-2 border-b">6</td>
-              <td class="p-2 border-b">12</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Wartbarkeit</td>
-              <td class="p-2 border-b">2</td>
-              <td class="p-2 border-b">8</td>
-              <td class="p-2 border-b">16</td>
-              <td class="p-2 border-b">6</td>
-              <td class="p-2 border-b">12</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Benutzerfreundlichkeit</td>
-              <td class="p-2 border-b">1</td>
-              <td class="p-2 border-b">8</td>
-              <td class="p-2 border-b">8</td>
-              <td class="p-2 border-b">7</td>
-              <td class="p-2 border-b">7</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Flexibilität</td>
-              <td class="p-2 border-b">1</td>
-              <td class="p-2 border-b">9</td>
-              <td class="p-2 border-b">9</td>
-              <td class="p-2 border-b">6</td>
-              <td class="p-2 border-b">6</td>
-            </tr>
-            <tr>
-              <td class="p-2 border-b">Sicherheit</td>
-              <td class="p-2 border-b">1</td>
-              <td class="p-2 border-b">7</td>
-              <td class="p-2 border-b">7</td>
-              <td class="p-2 border-b">7</td>
-              <td class="p-2 border-b">7</td>
-            </tr>
-            <tr>
-              <td class="p-2 font-bold">Summe</td>
-              <td class="p-2 font-bold">10</td>
-              <td class="p-2"></td>
-              <td class="p-2 font-bold">78</td>
-              <td class="p-2"></td>
-              <td class="p-2 font-bold">65</td>
-            </tr>
-          </tbody>
-        </table>
-        <p class="mt-4 text-sm italic">*Mit Erlernen der Sprache</p>
+      <!-- ReactJS Section -->
+      <div class="surface-card shadow-2 border-round p-4 mb-6">
+        <div class="flex align-items-center justify-content-between mb-4">
+          <span class="text-xl font-medium text-900">React JS</span>
+        </div>
+        <ul class="mt-4 list-none p-0 mx-0">
+          <li class="flex align-items-center pb-3">
+            <span style="width:1rem;height:1rem" class="border-round bg-indigo-500 mr-3 flex-shrink-0"></span>
+            <span class="text-xl font-medium text-90">Performance</span>
+            <span class="text-600 text-xl font-medium ml-auto">24</span>
+          </li>
+          <li class="flex align-items-center py-3">
+            <span style="width:1rem;height:1rem" class="border-round bg-blue-500 mr-3 flex-shrink-0"></span>
+            <span class="text-xl font-medium text-90">Entwicklungszeit</span>
+            <span class="text-600 text-xl font-medium ml-auto">14</span>
+          </li>
+          <!-- Continue with other criteria here -->
+        </ul>
       </div>
 
+      <!-- JS/HTML Section -->
+      <div class="surface-card shadow-2 border-round p-4 mb-6">
+        <div class="flex align-items-center justify-content-between mb-4">
+          <span class="text-xl font-medium text-900">JS/HTML</span>
+        </div>
+        <ul class="mt-4 list-none p-0 mx-0">
+          <li class="flex align-items-center pb-3">
+            <span style="width:1rem;height:1rem" class="border-round bg-indigo-500 mr-3 flex-shrink-0"></span>
+            <span class="text-xl font-medium text-90">Performance</span>
+            <span class="text-600 text-xl font-medium ml-auto">21</span>
+          </li>
+          <li class="flex align-items-center py-3">
+            <span style="width:1rem;height:1rem" class="border-round bg-blue-500 mr-3 flex-shrink-0"></span>
+            <span class="text-xl font-medium text-90">Entwicklungszeit</span>
+            <span class="text-600 text-xl font-medium ml-auto">12</span>
+          </li>
+          <!-- Continue with other criteria here -->
+        </ul>
+      </div>
+
+      <!-- Decision Section -->
       <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Entscheidung</h3>
-        <p class="mb-4">
+        <h3 class="text-md sm:text-lg font-semibold mb-2">Entscheidung</h3>
+        <p class="mb-4 text-sm sm:text-base">
           Auf Grundlage der Punkte, die sich aus der Gewichtung und den Bewertungen ergeben, hat React mit 78 Punkten besser abgeschnitten als JS/HTML mit 65 Punkten.
         </p>
       </div>
 
+      <!-- Justification Section -->
       <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Begründung der Entscheidung</h3>
-        <p>
+        <h3 class="text-md sm:text-lg font-semibold mb-2">Begründung der Entscheidung</h3>
+        <p class="text-sm sm:text-base">
           Basierend auf der Nutzwertanalyse ist React die sinnvollere Wahl für unser Projekt. Es bietet eine bessere Performance, ist wartbarer, flexibler und benutzerfreundlicher im Vergleich zu JS/HTML. Auch wenn die Entwicklungszeit möglicherweise etwas höher ist, überwiegen die langfristigen Vorteile wie bessere Wartbarkeit und Flexibilität. Daher haben wir uns entschieden, React anstelle von JS/HTML zu verwenden.
         </p>
       </div>
-    </div>`;
+    </div>
+  `;
     },
     getRealisierenSection() {
       return `
@@ -619,3 +571,5 @@ app.Run();
   },
 };
 </script>
+
+<style lang="scss"></style>
