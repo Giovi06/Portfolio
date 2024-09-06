@@ -331,202 +331,139 @@ export default {
     },
     getRealisierenSection() {
       return `
-      <div>
-      <h1 class="text-xl font-bold mb-6">2.4.1 Grundgerüst der Datenbank</h1>
-      <p class="mb-4">
-        Hier werde ich erklären, wie ich die Verbindung zur MongoDB erstellt habe.
-      </p>
+    <div class="surface-section px-4 py-8 md:px-6 lg:px-8 text-700">
+      <div class="flex flex-wrap">
+        <!-- Content Section -->
+        <div class="w-full lg:w-6 pr-0 lg:pr-5">
+          <span class="text-blue-700 bg-blue-50 inline-block py-2 px-3" style="border-radius:50px">Code Explanation</span>
+          <div class="font-normal text-2xl mt-3 mb-3 text-900">2.4.1 Grundgerüst der Datenbank</div>
+          <p class="line-height-3 mt-0 mb-5">
+            Hier werde ich erklären, wie ich die Verbindung zur MongoDB erstellt habe.
+          </p>
 
-      <pre class="bg-gray-100 p-4 rounded mb-6 text-sm">
-        {
-      {
-        "FightRadarDatabase": {
-          "ConnectionString": "mongodb://localhost:27017",
-            "DatabaseName": "FightRadar",
-              "CollectionName": "Fighters"
-        },
-        "Logging": {
-          "LogLevel": {
-            "Default": "Information",
-              "Microsoft.AspNetCore": "Warning"
-          }
-        },
-        "AllowedHosts": "*"
-      }
-      }
-      </pre>
+          <!-- Code Block Image Placeholder -->
+          <img src="" alt="Code snippet showing MongoDB connection setup" class="w-full border-round mb-5" />
 
-      <h2 class="text-lg font-semibold mb-4">Erläuterungen:</h2>
+          <!-- Explanation of Code Block -->
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">ConnectionString:</h3>
+            <p class="mb-2">
+              Die Verbindungszeichenfolge zu MongoDB, die angibt, wo sich die Datenbank
+              befindet = «mongodb://localhost:27017», was bedeutet, dass MongoDB auf dem
+              lokalen Computer auf Port 27017 läuft.
+            </p>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">DatabaseName:</h3>
+            <p class="mb-2">Der Name der Datenbank, die verwendet wird. Hier ist es FightRadar.</p>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">CollectionName:</h3>
+            <p class="mb-2">
+              Der Name der Sammlung (Collection) innerhalb der Datenbank, die verwendet wird.
+              Hier ist es Fighters.
+            </p>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">Logging:</h3>
+            <p class="mb-2">
+              LogLevel: Legt die Protokollierungsstufen für verschiedene Teile der Anwendung
+              fest. Zum Beispiel wird für Default das Protokollierungsniveau auf Information
+              gesetzt und für Microsoft.AspNetCore auf Warning. Das bedeutet, dass allgemeine
+              Informationen protokolliert werden, aber für die ASP.NET Core-Komponenten nur
+              Warnungen und schwerwiegendere Meldungen protokolliert werden.
+            </p>
+          </div>
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">AllowedHosts:</h3>
+            <p class="mb-2">
+              Dies gibt an, welche Hosts die Anwendung annehmen darf. Der Wert * bedeutet, dass
+              alle Hosts erlaubt sind.
+            </p>
+          </div>
+        </div>
 
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">ConnectionString:</h3>
-        <p class="mb-2">
-          Die Verbindungszeichenfolge zu MongoDB, die angibt, wo sich die Datenbank
-          befindet = «mongodb://localhost:27017», was bedeutet, dass MongoDB auf dem
-          lokalen Computer auf Port 27017 läuft.
-        </p>
+        <!-- Image Section -->
+        <div class="w-full lg:w-6 pl-0 lg:pl-5 pt-5">
+          <img src="" alt="Program.cs implementation code snippet" class="w-full border-round mb-5" />
+          <div class="text-center text-sm font-medium mb-5">Program.cs Implementierung</div>
+
+          <p class="line-height-3 mt-0 mb-5">
+            Im Program.cs habe ich das implementiert. Das WebApplication-Objekt wird erstellt und konfiguriert.
+          </p>
+
+          <!-- Explanation of Program.cs Implementation -->
+          <p class="line-height-3 mt-0 mb-5">
+            Die Konfigurationseinstellungen für die Datenbank (FightRadarDatabaseSettings) werden
+            aus der appsettings.json-Datei gelesen und zur Verfügung gestellt. Ein Singleton-Dienst
+            für die UserService-Klasse wird hinzugefügt, damit diese Klasse später im Code verwendet
+            werden kann. CORS (Cross-Origin Resource Sharing) wird konfiguriert, um alle Ursprünge,
+            Methoden und Header zu erlauben. Das ermöglicht es, dass die API von verschiedenen Domänen
+            aus angesprochen werden kann. Die Controller der Anwendung werden hinzugefügt und JSON-Optionen
+            werden so konfiguriert, dass die ursprüngliche Namensgebung beibehalten wird.
+          </p>
+
+          <!-- Models Section -->
+          <div class="text-3xl text-900 mb-5">Modelle</div>
+          <p class="line-height-3 mb-5">
+            Das sind die wichtigsten Modelle, worin Variablen definiert werden, damit sie in der
+            Datenbank gespeichert werden: <strong>Fight.cs</strong>, <strong>FightRadarDatabase.cs</strong> und
+            <strong>User.cs</strong>.
+          </p>
+
+          <img src="" alt="Fight.cs code snippet" class="w-full border-round mb-5" />
+          <div class="text-center text-sm font-medium mb-5">Fight.cs Implementierung</div>
+
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">Fight.cs:</h3>
+            <p class="mb-2">
+              In der "Fight.cs" definieren wir die Struktur eines Kampfes und eines Matches in unserer
+              Anwendung. <br />
+              <strong>Opponent:</strong> Informationen über den Gegner, wie z. B. Username und Id. <br />
+              <strong>Result:</strong> Das Ergebnis des Kampfes. <br />
+              <strong>Date:</strong> Das Datum, an dem der Kampf stattgefunden hat.
+            </p>
+          </div>
+
+          <img src="" alt="FightRadarDatabaseSettings.cs code snippet" class="w-full border-round mb-5" />
+          <div class="text-center text-sm font-medium mb-5">FightRadarDatabaseSettings.cs Implementierung</div>
+
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">FightRadarDatabaseSettings.cs:</h3>
+            <p class="mb-2">
+              Die Klasse "FightRadarDatabaseSettings.cs" ist eine Konfigurationsklasse, die verwendet wird, um
+              die Verbindungsinformationen zur MongoDB-Datenbank zu halten. Diese Informationen werden aus der
+              appsettings.json-Datei geladen und enthalten typischerweise:
+              <br />
+              <strong>ConnectionString:</strong> Die URL zur MongoDB-Datenbank, einschließlich Hostname und
+              Portnummer. <br />
+              <strong>DatabaseName:</strong> Der Name der MongoDB-Datenbank, in der die Daten gespeichert werden. <br />
+              <strong>CollectionName:</strong> Der Name der MongoDB-Sammlung (Collection), in der bestimmte Dokumente
+              (z. B. Benutzer) gespeichert werden.
+            </p>
+          </div>
+
+          <img src="" alt="User.cs code snippet" class="w-full border-round mb-5" />
+          <div class="text-center text-sm font-medium mb-5">User.cs Implementierung</div>
+
+          <div class="mb-6">
+            <h3 class="text-md font-semibold mb-2">User.cs:</h3>
+            <p class="mb-2">
+              In der "User.cs" definieren wir die Struktur eines Benutzerobjekts für unsere Anwendung. Es werden die
+              Eigenschaften eines Benutzers festgelegt, die in der MongoDB-Datenbank gespeichert werden sollen.
+              <br />
+              <strong>Id:</strong> für die eindeutige Kennung des Benutzers. <br />
+              <strong>Username:</strong> Der Benutzername des Benutzers. <br />
+              <strong>Password:</strong> Das Passwort des Benutzers (in der Regel verschlüsselt gespeichert). <br />
+              <strong>Email:</strong> Die E-Mail-Adresse des Benutzers. <br />
+              <strong>Matches:</strong> Eine Liste von Kämpfen oder Matches, die der Benutzer gespeichert hat. <br />
+              Weitere Eigenschaften wie Gewicht, Erfahrungen, Kampfstil und Gewichtsklasse könnten ebenfalls Teil des Benutzerprofils sein.
+            </p>
+          </div>
+        </div>
       </div>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">DatabaseName:</h3>
-        <p class="mb-2">Der Name der Datenbank, die verwendet wird. Hier ist es FightRadar.</p>
-      </div>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">CollectionName:</h3>
-        <p class="mb-2">
-          Der Name der Sammlung (Collection) innerhalb der Datenbank, die verwendet wird.
-          Hier ist es Fighters.
-        </p>
-      </div>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Logging:</h3>
-        <p class="mb-2">
-          LogLevel: Legt die Protokollierungsstufen für verschiedene Teile der Anwendung
-          fest. Zum Beispiel wird für Default das Protokollierungsniveau auf Information
-          gesetzt und für Microsoft.AspNetCore auf Warning. Das bedeutet, dass allgemeine
-          Informationen protokolliert werden, aber für die ASP.NET Core-Komponenten nur
-          Warnungen und schwerwiegendere Meldungen protokolliert werden.
-        </p>
-      </div>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">AllowedHosts:</h3>
-        <p class="mb-2">
-          Dies gibt an, welche Hosts die Anwendung annehmen darf. Der Wert * bedeutet, dass
-          alle Hosts erlaubt sind.
-        </p>
-      </div>
-
-      <h2 class="text-lg font-semibold mb-4">Program.cs Implementierung:</h2>
-
-      <p class="mb-6">
-        Im Program.cs habe ich das implementiert. Das WebApplication-Objekt wird erstellt
-        und konfiguriert.
-      </p>
-
-      <pre class="bg-gray-100 p-4 rounded mb-6 text-sm">
-        {
-      using System.Text;
-    using FightRadarAPI.Models;
-    using FightRadarAPI.Services;
-    using Microsoft.AspNetCore.Authentication.JwtBearer;
-    using Microsoft.AspNetCore.Builder;
-    using Microsoft.AspNetCore.Hosting;
-    using Microsoft.Extensions.Configuration;
-    using Microsoft.Extensions.DependencyInjection;
-    using Microsoft.Extensions.Hosting;
-    using Microsoft.IdentityModel.Tokens;
-    using Microsoft.OpenApi.Models;
-
-    var builder = WebApplication.CreateBuilder(args);
-
-    // Add services to the container.
-    builder.Services.Configure < FightRadarDatabaseSettings > (
-      builder.Configuration.GetSection("FightRadarDatabase"));
-
-    builder.Services.AddSingleton < UserService > ();
-
-    builder.Services.AddCors(options => {
-      options.AddPolicy("AllowAllOrigins",
-        builder => {
-          builder.AllowAnyOrigin()
-            .AllowAnyMethod()
-            .AllowAnyHeader();
-        });
-    });
-
-    builder.Services.AddControllers()
-      .AddJsonOptions(
-        options => options.JsonSerializerOptions.PropertyNamingPolicy = null);
-
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddSwaggerGen();
-
-    var app = builder.Build();
-
-    // Configure the HTTP request pipeline.
-    if(app.Environment.IsDevelopment())
-{
-  app.UseSwagger();
-  app.UseSwaggerUI();
-}
-
-app.UseHttpsRedirection();
-
-app.UseRouting();
-
-app.UseCors("AllowAllOrigins");
-
-app.UseAuthentication();
-app.UseAuthorization();
-
-app.MapControllers();
-
-app.Run();
-}
-      </pre>
-
-      <p class="mb-6">
-        Die Konfigurationseinstellungen für die Datenbank (FightRadarDatabaseSettings) werden
-        aus der appsettings.json-Datei gelesen und zur Verfügung gestellt. Ein Singleton-Dienst
-        für die UserService-Klasse wird hinzugefügt, damit diese Klasse später im Code verwendet
-        werden kann. CORS (Cross-Origin Resource Sharing) wird konfiguriert, um alle Ursprünge,
-        Methoden und Header zu erlauben. Das ermöglicht es, dass die API von verschiedenen Domänen
-        aus angesprochen werden kann. Die Controller der Anwendung werden hinzugefügt und JSON-Optionen
-        werden so konfiguriert, dass die ursprüngliche Namensgebung beibehalten wird.
-      </p>
-
-      <h2 class="text-lg font-semibold mb-4">Modelle:</h2>
-
-      <p class="mb-4">
-        Das sind die wichtigsten Modelle, worin Variablen definiert werden, damit sie in der
-        Datenbank gespeichert werden: <strong>Fight.cs</strong>, <strong>FightRadarDatabase.cs</strong> und
-        <strong> User.cs</strong>.
-      </p>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">Fight.cs:</h3>
-        <p class="mb-2">
-          In der "Fight.cs" definieren wir die Struktur eines Kampfes und eines Matches in unserer
-          Anwendung. <br />
-          <strong>Opponent</strong> = Informationen über den Gegner, wie z. B. Username und Id. <br />
-          <strong>Result</strong> = Das Ergebnis des Kampfes. <br />
-          <strong>Date</strong> = Das Datum, an dem der Kampf stattgefunden hat.
-        </p>
-      </div>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">FightRadarDatabaseSettings.cs:</h3>
-        <p class="mb-2">
-          Die Klasse "FightRadarDatabaseSettings.cs" ist eine Konfigurationsklasse, die verwendet wird, um
-          die Verbindungsinformationen zur MongoDB-Datenbank zu halten. Diese Informationen werden aus der
-          appsettings.json-Datei geladen und enthalten typischerweise:
-          <br />
-          <strong>ConnectionString</strong> = Die URL zur MongoDB-Datenbank, einschließlich Hostname und
-          Portnummer. <br />
-          <strong>DatabaseName</strong> = Der Name der MongoDB-Datenbank, in der die Daten gespeichert werden. <br />
-          <strong>CollectionName</strong> = Der Name der MongoDB-Sammlung (Collection), in der bestimmte Dokumente
-          (z. B. Benutzer) gespeichert werden.
-        </p>
-      </div>
-
-      <div class="mb-6">
-        <h3 class="text-md font-semibold mb-2">User.cs:</h3>
-        <p class="mb-2">
-          In der "User.cs" definieren wir die Struktur eines Benutzerobjekts für unsere Anwendung. Es werden die
-          Eigenschaften eines Benutzers festgelegt, die in der MongoDB-Datenbank gespeichert werden sollen.
-          <br />
-          <strong>Id</strong> = für die eindeutige Kennung des Benutzers. <br />
-          <strong>Username</strong> = Der Benutzername des Benutzers. <br />
-          <strong>Password</strong> = Das Passwort des Benutzers (in der Regel verschlüsselt gespeichert). <br />
-          <strong>Email</strong> = Die E-Mail-Adresse des Benutzers. <br />
-          <strong>Matches</strong> = Eine Liste von Kämpfen oder Matches, die der Benutzer gespeichert hat. <br />
-          Weitere Eigenschaften wie Gewicht, Erfahrungen, Kampfstil und Gewichtsklasse könnten ebenfalls Teil des Benutzerprofils sein.
-        </p>
-      </div>
-    </div>`;
+    </div>
+  `;
     },
     getAuswertungSection() {
       return `
