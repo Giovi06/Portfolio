@@ -11,9 +11,9 @@ import "primeicons/primeicons.css";
         <Navbar class="z-10 fixed w-full top-0 left-0" />
       </nav>
 
-      <body>
-        <RouterView class="z-0 absolute w-full h-screen top-0 left-0" />
-      </body>
+      <div>
+        <RouterView class="z-0 absolute" />
+      </div>
     </div>
   </div>
 </template>

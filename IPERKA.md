@@ -43,20 +43,20 @@ Eine eigene Portfolio Website. Programmiert mit Vue3JS.
 | AP-№ | Frist    | Zuständig  | Beschreibung                                      | geplante Zeit (Minuten) |
 | ---- | -------- | ---------- | ------------------------------------------------- | ----------------------- |
 | 1    | 10.09.24 | Entwickler | Implementierung der Multi-Language-Funktionalität | 240                     |
-| 2    | 12.09.24 | Entwickler | Erstellung eines responsiven Designs              | 360                     |
+| 2    | 12.09.24 | Entwickler | Verbesserung des responsiv-design                 | 360                     |
 | 3    | 14.09.24 | Entwickler | Erstellung der Skills-Seite                       | 180                     |
 | 4    | 16.09.24 | Entwickler | Konfiguration der Subdomains für Firmen           | 300                     |
 | 5    | 18.09.24 | Entwickler | Implementierung mehrerer Projekte                 | 240                     |
 
 ## 3 Realisieren
 
-| AP-№ | Datum    | Zuständig  | Geplante Zeit | Tatsächliche Zeit |
-| ---- | -------- | ---------- | ------------- | ----------------- |
-| 1    | 11.09.24 | Entwickler | 240           |                   |
-| 2    | 13.09.24 | Entwickler | 360           |                   |
-| 3    | 15.09.24 | Entwickler | 180           |                   |
-| 4    | 17.09.24 | Entwickler | 300           |                   |
-| 5    | 19.09.24 | Entwickler | 240           |                   |
+| AP-№ | Datum  | Zuständig  | Geplante Zeit | Tatsächliche Zeit |
+| ---- | ------ | ---------- | ------------- | ----------------- |
+| 1    | .09.24 | Entwickler | 240           |                   |
+| 2    | .09.24 | Entwickler | 360           |                   |
+| 3    | .09.24 | Entwickler | 180           |                   |
+| 4    | .09.24 | Entwickler | 300           |                   |
+| 5    | .09.24 | Entwickler | 240           |                   |
 
 ## 4 Kontrollieren
 
