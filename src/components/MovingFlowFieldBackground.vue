@@ -16,7 +16,21 @@ export default {
 
         const sketch = (p5) => {
             let particles = [];
-            const particleCount = 6000;
+            let particleCount;
+            const height = window.innerHeight;
+            const width = window.innerWidth;
+
+            if (width >= 1920) {
+                particleCount = 6000;
+            } else if (width >= 768) {
+                particleCount = 3000;
+            } else if (width >= 640) {
+                particleCount = 2000;
+            } else if (width < 640) {
+                particleCount = 1000;
+            }
+
+
             let noiseScale;
 
             let r1, r2, g1, g2, b1, b2;

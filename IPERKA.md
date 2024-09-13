@@ -50,13 +50,13 @@ Eine eigene Portfolio Website. Programmiert mit Vue3JS.
 
 ## 3 Realisieren
 
-| AP-№ | Datum  | Zuständig  | Geplante Zeit | Tatsächliche Zeit |
-| ---- | ------ | ---------- | ------------- | ----------------- |
-| 1    | .09.24 | Entwickler | 240           |                   |
-| 2    | .09.24 | Entwickler | 360           |                   |
-| 3    | .09.24 | Entwickler | 180           |                   |
-| 4    | .09.24 | Entwickler | 300           |                   |
-| 5    | .09.24 | Entwickler | 240           |                   |
+| AP-№ | Datum    | Zuständig  | Geplante Zeit | Tatsächliche Zeit |
+| ---- | -------- | ---------- | ------------- | ----------------- |
+| 1    | .09.24   | Entwickler | 240           |                   |
+| 2    | 06.09.24 | Entwickler | 360           | 360               |
+| 3    | .09.24   | Entwickler | 180           |                   |
+| 4    | .09.24   | Entwickler | 300           |                   |
+| 5    | 06.09.24 | Entwickler | 240           | 240               |
 
 ## 4 Kontrollieren
 
