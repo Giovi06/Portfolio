@@ -2,7 +2,7 @@
 
 Projektbeschreibung
 
-Teammitglieder: **Name1**, **Name2**, **Name3**
+Teammitglieder: **Giovanni Innamorato**
 
 ---
 
@@ -11,6 +11,7 @@ Teammitglieder: **Name1**, **Name2**, **Name3**
 | Datum    | Version | Zusammenfassung                             |
 | -------- | ------- | ------------------------------------------- |
 | 06.09.24 | 1.0.1   | Initiale Version der Dokumentation erstellt |
+|25.10.24|1.0.2|Webseite ist öffentlich auffindbar|
 
 ## 1 Informieren
 
@@ -52,22 +53,22 @@ Eine eigene Portfolio Website. Programmiert mit Vue3JS.
 
 | AP-№ | Datum    | Zuständig  | Geplante Zeit | Tatsächliche Zeit |
 | ---- | -------- | ---------- | ------------- | ----------------- |
-| 1    | .09.24   | Entwickler | 240           |                   |
-| 2    | 06.09.24 | Entwickler | 360           | 360               |
-| 3    | .09.24   | Entwickler | 180           |                   |
-| 4    | .09.24   | Entwickler | 300           |                   |
-| 5    | 06.09.24 | Entwickler | 240           | 240               |
+| 1    | 13.09.24 | Entwickler | 240           | 240'              |
+| 1    | 14.10.24 | Entwickler | 240           | 240'              |
+| 2    | 06.09.24 | Entwickler | 360           | 360'              |
+| 3    | 00.00.24   | Entwickler |            |                   |
+| 4    | 00.00.24   | Entwickler |            |                   |
+| 5    | 06.09.24 | Entwickler | 240           | 240'              |
 
-## 4 Kontrollieren
+## 4 Kontrol1lieren
 
 ### Testprotokoll
 
 | TC-№ | Datum | Resultat | Tester |
 | ---- | ----- | -------- | ------ |
-| 1    |       |          |        |
-| 2    |       |          |        |
-| 3    |       |          |        |
-| 4    |       |          |        |
-| 5    |       |          |        |
-| 6    |       |          |        |
-| 8    |       |          |        |
+| 1    |25.10.24|OK|Giovanni Innamorato|
+| 2    |25.10.24|OK|Giovanni Innamorato|
+| 3    |25.10.24|NOK|Giovanni Innamorato|
+| 4    |25.10.24|NOK|Giovanni Innamorato|
+| 5    |25.10.24|OK|Giovanni Innamorato|
+
